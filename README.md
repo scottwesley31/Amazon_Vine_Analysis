@@ -6,7 +6,7 @@ The purpose of this analysis is to perform ETL on a dataset of Amazon product re
 
 ## Results
 
-In order to analyze the musical instruments Amazon product reviews, the dataset was extracted from an AWS S3 bucket and then transformed using PySpark in a Google Colab Notebook. The `review_id`, `star_rating`, `helpful_votes`, `total_votes`, `vine`, and `verified_purchase` columns were selected from the original dataframe and then filtered to display only the rows with `total_votes` greater than or equal to 20. This subset was further filtered by the rows containing a ratio of `helpful_votes/total_votes` that was greater than or equal to 50%. This filtered out review that had less online interaction overall. This dataframe (named `helpful_votes_df`) was then utilized to answer the following questions:
+In order to analyze the musical instruments Amazon product reviews, the dataset was extracted from an AWS S3 bucket and then transformed using PySpark in a Google Colab Notebook. The `review_id`, `star_rating`, `helpful_votes`, `total_votes`, `vine`, and `verified_purchase` columns were selected from the original dataframe and then filtered to display only the rows with `total_votes` greater than or equal to 20. This subset was further filtered by the rows containing a ratio of `helpful_votes/total_votes` that was greater than or equal to 50%. This filtered out reviews that had less online interaction overall. This dataframe (named `helpful_votes_df`) was then utilized to answer the following questions:
 
 ### How many Vine reviews and non-Vine reviews were there?
 To determine how many Vine and non-Vine reviews there were in this data subset, two filtered dataframes were made. The following code generated a dataframe (`vine_paid_df`) which filters for the Vine reviews only:
@@ -40,13 +40,14 @@ The Vine and non-Vine five-star review percentages could then be calculated by d
 
 ![paid_unpaid_fivestar_percents](https://user-images.githubusercontent.com/107309793/193725962-b070999f-02d9-4758-b883-cd8c344adbea.png)
 
-Therefore **0.41% of the 5 star reviews were from Vine members** and **99.59% were from non-Vine customers**.
+Therefore **0.41%** of the 5 star reviews were from **Vine members** and **99.59%** were from **non-Vine customers**.
 
 ## Summary
 
 ### Is there any positivity bias for reviews in the Vine program?
-Considering the sample analyzed in this dataset as a whole (14,537 musical instrument reviews), only 60 of the reviews were from Amazon Vine members and the other 14,477 reviews were from regular customers. The overall contribution to the overall reviews is not substantial enough to introduce significant bias.
+Considering the sample analyzed in this dataset as a whole (14,537 musical instrument reviews), only **60** of the reviews were from Amazon Vine members and the other **14,477** reviews were from regular customers. The overall contribution to the overall reviews is not substantial enough to introduce significant bias.
 
-When considering the five-star subset of this sample (8,246 five-star reviews), a similar trend is seen; only 0.41% of the 5 star reviews were from Vine members while the other 99.59% were from non-Vine customers. This further supports the evidence that the vast majority of the positive reviews on the musical instruments are coming from the non-Vine customer base, not the Vine members. The lack of five-star reviews coming from Vine-members might actually indicate that these reviewers are rating with far more scrutiny than most customers.
+When considering the five-star subset of this sample (8,246 five-star reviews), a similar trend is seen; only **0.41%** of the 5 star reviews were from Vine members while the other **99.59%** were from non-Vine customers. This further supports the evidence that the vast majority of the positive reviews on the musical instruments are coming from the non-Vine customer base, not the Vine members. The lack of five-star reviews coming from Vine-members might actually indicate that these reviewers are rating with far more scrutiny than most customers.
 
 ### One Additional Analysis for the Dataset as Further Support
+To further support this statement it would be worth incorporating **natural language processing (NLP)** on the `review_headline` and `review_body` columns which appear in the original dataframe. These columns contain the actual content of each review. The text from these reviews could undergo the **NLP pipeline** (raw text, tokenization, stop words filtering, TF-IDF, and machine learning) in order to ascertain which reviews are positive or negative based on a **Naive Bayes model**. Likely the model will show similar information - that the majority of positive reviews are coming from the non-Vine customer base.
