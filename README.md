@@ -24,6 +24,11 @@ It was then possible to count the rows of each of these tables and to determine 
 Therefore, there are 60 Vine reviews and 14,477 non-Vine reviews in this dataset.
 
 ### How many Vine reviews were 5 stars? How many non-Vine reviews were 5 stars?
+In order to determine the number of Vine reviews with 5 stars and non-Vine reviews with 5 stars, the same `vine_paid_df` and `vine_unpaid_df` dataframes depicted above were filtered for only the rows when the `star_rating == 5`. These rows were then counted. Here is a screenshot of the code:
+
+![paid_unpaid_fivestar_reviews](https://user-images.githubusercontent.com/107309793/193711753-99dc2811-6dbf-453c-a3e1-36c1c4abf311.png)
+
+Therefore, 34 Vine reviews and 8,212 non-Vine reviews were 5 stars.
 
 ### What percentage of Vine reviews were 5 stars? What percentage of non-Vine reviews were 5 stars?
 
