@@ -32,4 +32,19 @@ Therefore, 34 Vine reviews and 8,212 non-Vine reviews were 5 stars.
 
 ### What percentage of Vine reviews were 5 stars? What percentage of non-Vine reviews were 5 stars?
 
+In order to answer this question, the total number of five-star reviews overall had to be determined. This was completed by filtering the `helpful_votes_df` using the `star_rating == 5` condition. This resulted in 8,246 five-star reviews as shown below:
+
+![fivestar_reviews](https://user-images.githubusercontent.com/107309793/193725750-3b31c9b8-2cd0-4f6f-9a99-f1ebe8315205.png)
+
+The Vine and non-Vine five-star review percentages could then be calculated by dividing the number of five-star Vine (or non-Vine) reviews over the total number of five-star reviews overall and then multiplying by 100. Here is the result:
+
+![paid_unpaid_fivestar_percents](https://user-images.githubusercontent.com/107309793/193725962-b070999f-02d9-4758-b883-cd8c344adbea.png)
+
+Therefore 0.41% of the 5 star reviews were from Vine members and 99.59% were from non-Vine consumers.
+
 ## Summary
+
+### Is there any positivity bias for reviews in the Vine program?
+
+
+### One Additional Analysis for the Dataset as Further Support
