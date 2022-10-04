@@ -21,14 +21,14 @@ It was then possible to count the rows of each of these tables and to determine 
 
 ![paid_unpaid_reviews](https://user-images.githubusercontent.com/107309793/193491090-d299af85-cf5f-476b-9867-a8eed2715060.png)
 
-Therefore, there are 60 Vine reviews and 14,477 non-Vine reviews in this dataset.
+Therefore, there are **60 Vine reviews** and **14,477 non-Vine reviews** in this dataset.
 
 ### How many Vine reviews were 5 stars? How many non-Vine reviews were 5 stars?
 In order to determine the number of Vine reviews with 5 stars and non-Vine reviews with 5 stars, the same `vine_paid_df` and `vine_unpaid_df` dataframes depicted above were filtered for only the rows when the `star_rating == 5`. These rows were then counted. Here is a screenshot of the code:
 
 ![paid_unpaid_fivestar_reviews](https://user-images.githubusercontent.com/107309793/193711753-99dc2811-6dbf-453c-a3e1-36c1c4abf311.png)
 
-Therefore, 34 Vine reviews and 8,212 non-Vine reviews were 5 stars.
+Therefore, **34 Vine reviews** and **8,212 non-Vine reviews** were 5 stars.
 
 ### What percentage of Vine reviews were 5 stars? What percentage of non-Vine reviews were 5 stars?
 
@@ -40,11 +40,13 @@ The Vine and non-Vine five-star review percentages could then be calculated by d
 
 ![paid_unpaid_fivestar_percents](https://user-images.githubusercontent.com/107309793/193725962-b070999f-02d9-4758-b883-cd8c344adbea.png)
 
-Therefore 0.41% of the 5 star reviews were from Vine members and 99.59% were from non-Vine consumers.
+Therefore **0.41% of the 5 star reviews were from Vine members** and **99.59% were from non-Vine customers**.
 
 ## Summary
 
 ### Is there any positivity bias for reviews in the Vine program?
+Considering the sample analyzed in this dataset as a whole (14,537 musical instrument reviews), only 60 of the reviews were from Amazon Vine members and the other 14,477 reviews were from regular customers. The overall contribution to the overall reviews is not substantial enough to introduce significant bias.
 
+When considering the five-star subset of this sample (8,246 five-star reviews), a similar trend is seen; only 0.41% of the 5 star reviews were from Vine members while the other 99.59% were from non-Vine customers. This further supports the evidence that the vast majority of the positive reviews on the musical instruments are coming from the non-Vine customer base, not the Vine members. The lack of five-star reviews coming from Vine-members might actually indicate that these reviewers are rating with far more scrutiny than most customers.
 
 ### One Additional Analysis for the Dataset as Further Support
